@@ -1,0 +1,217 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    max-width: 1024px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #1B3397;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+/* Центрування для екранів >1024px */
+@media (min-width: 1025px) {
+    .banner {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Повна ширина для 360px-1024px */
+@media (min-width: 360px) and (max-width: 1024px) {
+    .banner {
+        max-width: 100%;
+        border-radius: 0;
+    }
+}
+
+.image-wrapper {
+    position: absolute;
+    left: 20px;
+    height: 80%;
+    width: 150px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.icon-background {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    top: 30px;
+    left: 80px;
+}
+
+.image-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 1s ease;
+    opacity: 1;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-image {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.text-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    transition: all 1s ease;
+    opacity: 1;
+}
+
+.text-line {
+    display: block;
+    line-height: 1.2;
+}
+
+.title-text {
+    font-weight: bold;
+    font-size: 27px;
+    color: #ffff08;
+}
+
+.second-text {
+    color: white;
+}
+
+.buy-now-btn {
+    padding: 8px 16px;
+    background: white;
+    color: #1B3397;
+    border: none;
+    border-radius: 20px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 5;
+    margin-right: 20px;
+    transform: scale(1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    10% { transform: scale(1.2); }
+    20% { transform: scale(1); }
+    30% { transform: scale(1.2); }
+    40% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+.button-wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 70px;
+    position: relative;
+    z-index: 6;
+}
+
+.grid-icon {
+    width: 24px;
+    height: 24px;
+    z-index: 7;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #1B3397;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #546dda;
+    transform: scale(1.1);
+}
+
+.text-disappear {
+    opacity: 0;
+    transform: translate(-50%, 100px);
+}
+
+.image-disappear {
+    opacity: 0;
+    transform: translateY(-150px);
+}
+
+.slide-down {
+    animation: slideDown 0.5s ease forwards;
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100vh); }
+}
+
+@media (max-width: 360px) {
+    .banner {
+        height: 90px;
+        padding-right: 10px;
+    }
+    .buy-now-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+        margin-right: 10px;
+    }
+    .text-container {
+        font-size: 14px;
+    }
+    .image-wrapper {
+        left: 10px;
+        height: 70%;
+        margin-left: 30px;
+        width: 120px;
+    }
+    .icon-background {
+        width: 30px;
+        height: 30px;
+        left: -30px;
+    }
+    .button-wrapper {
+        margin-right: 20px;
+    }
+    .grid-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
