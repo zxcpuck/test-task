@@ -246,8 +246,8 @@ body {
 
 /*При розширені більше ніж на 1024 пікселів*/
 @media (min-width: 1025px) {
-    .banner {
-        left: 50%;
-        transform: translateX(-50%);
+    body {
+        display: flex;
+        justify-content: center;
     }
 }
