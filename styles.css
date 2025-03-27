@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: black;
 }
 
 .banner {
@@ -28,15 +29,16 @@ body {
     display: flex;
     align-items: center;
     margin-left: 50px;
+    aspect-ratio: auto;
 }
 
 .icon-background {
-    position: absolute;
+    position: relative;
     width: 40px;
     height: 40px;
     z-index: 1;
     top: 50%;
-    left: 80px;
+    left: 40%;
     transform: translateY(-50%);
 }
 
